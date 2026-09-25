@@ -1,95 +1,99 @@
+<div align="center">
+
 # SyncPulse
 
-## AI meeting decisions and action automation
+### Turn meeting conversations into coordinated work
 
-SyncPulse turns an unstructured meeting transcript into a reviewable, reusable work plan. It extracts the important outcomes, lets a person verify them, and then sends each action to the system where work already happens.
+**AI-assisted meeting intelligence with a human review step and one-click delivery to the tools your team already uses.**
 
-**Transcript in -> structured decisions and tasks -> human review -> automated work dispatch**
+<p>
+   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+   <img src="https://img.shields.io/badge/React-19-149eca?style=for-the-badge&logo=react" alt="React" />
+   <img src="https://img.shields.io/badge/Groq-AI-f55036?style=for-the-badge" alt="Groq AI" />
+   <img src="https://img.shields.io/badge/Supabase-Postgres-3ecf8e?style=for-the-badge&logo=supabase" alt="Supabase" />
+</p>
 
-Use it after a Zoom, Google Meet, Teams, or other meeting to answer:
+<p>
+   <a href="#why-syncpulse">Why SyncPulse</a> ·
+   <a href="#features">Features</a> ·
+   <a href="#how-to-automate-a-recurring-workflow">Automation playbook</a> ·
+   <a href="#getting-started">Get started</a>
+</p>
 
-- What was decided?
-- Who owns each follow-up?
-- When is it due?
-- Which tasks should become calendar events, Jira issues, Slack updates, or emails?
+</div>
 
-## What problem does it solve?
+<blockquote>
+   <strong>Transcript in.</strong> Structured outcomes out.<br />
+   Review decisions, confirm owners, and dispatch every follow-up from one workspace.
+</blockquote>
 
-Meeting notes often become a second manual job. Someone has to read the transcript, find decisions, copy tasks into Jira, create reminders, and notify the team.
+## Why SyncPulse?
 
-SyncPulse gives that workflow one place:
+Meeting notes should not become a second manual job. SyncPulse turns the part of the meeting that usually disappears into a repeatable operating loop:
 
-1. Paste, upload, or select a sample transcript.
-2. Ask Groq AI to extract a summary, topics, decisions, owners, deadlines, priorities, and source quotes.
-3. Review and edit the extracted results before anything is dispatched.
-4. Send approved action items to the tools your team uses.
-5. Save the meeting and search it later.
+<table>
+   <tr>
+      <td align="center" width="20%"><strong>01</strong><br />Capture</td>
+      <td align="center" width="20%"><strong>02</strong><br />Understand</td>
+      <td align="center" width="20%"><strong>03</strong><br />Review</td>
+      <td align="center" width="20%"><strong>04</strong><br />Dispatch</td>
+      <td align="center" width="20%"><strong>05</strong><br />Remember</td>
+   </tr>
+   <tr>
+      <td align="center">Paste or upload the transcript</td>
+      <td align="center">Extract decisions and tasks with AI</td>
+      <td align="center">Correct the details before sending</td>
+      <td align="center">Push work to Calendar, Jira, Slack, or Email</td>
+      <td align="center">Search the saved meeting later</td>
+   </tr>
+</table>
 
 ## Features
 
-### 1. Flexible transcript intake
+<table>
+   <tr>
+      <td width="50%" valign="top">
+         <h3>01 · Bring in any transcript</h3>
+         <p>Paste notes, upload <code>.txt</code>, <code>.vtt</code>, or <code>.srt</code> files, or start with a built-in sample. Common WebVTT timestamps and numbering are cleaned during upload.</p>
+      </td>
+      <td width="50%" valign="top">
+         <h3>02 · Extract useful structure</h3>
+         <p>Groq AI identifies the summary, topics, decisions, rationale, action items, owners, emails, deadlines, priorities, and source quotes.</p>
+      </td>
+   </tr>
+   <tr>
+      <td width="50%" valign="top">
+         <h3>03 · Keep a person in control</h3>
+         <p>Edit, add, or delete decisions and tasks. Update owners, deadlines, priorities, categories, and emails before an external action is sent.</p>
+      </td>
+      <td width="50%" valign="top">
+         <h3>04 · Dispatch without retyping</h3>
+         <p>Send each approved action to the destination that owns the work: Calendar, Jira, Slack, direct email, or a meeting-wide broadcast.</p>
+      </td>
+   </tr>
+   <tr>
+      <td width="50%" valign="top">
+         <h3>05 · Batch the obvious work</h3>
+         <p><strong>Sync All</strong> processes unsynced Calendar and Jira actions for a fast post-meeting cleanup.</p>
+      </td>
+      <td width="50%" valign="top">
+         <h3>06 · Build a searchable memory</h3>
+         <p>Save meetings to Supabase, search across transcripts and outcomes, reload a meeting into the reviewer, preview it, or export Markdown minutes.</p>
+      </td>
+   </tr>
+</table>
 
-- Paste and edit raw transcript text.
-- Upload `.txt`, `.vtt`, or `.srt` files.
-- Clean common WebVTT timestamps and numbering during upload.
-- Start quickly with built-in sample meetings.
-- See word count and estimated reading time before analysis.
+## From one task to the right destination
 
-### 2. AI extraction into useful work items
-
-The AI processing route converts a transcript into structured data:
-
-- Executive summary
-- Key topics
-- Agreed decisions
-- Decision categories and rationale
-- Action items
-- Owner names and email addresses
-- Deadlines
-- High, Medium, or Low priority
-- Source quotes for traceability
-
-The source quote is important: reviewers can compare an extracted item with the words that produced it instead of accepting an unexplained AI result.
-
-### 3. Human-in-the-loop review
-
-AI prepares the work; the reviewer remains in control.
-
-- Edit decisions, rationale, categories, and statuses.
-- Add or delete decisions manually.
-- Edit task descriptions, owners, emails, deadlines, priorities, and categories.
-- Add or delete action items manually.
-- Expand source quotes while reviewing.
-- Filter action items by all, pending, synced, or high priority.
-
-### 4. One action item, several destinations
-
-Each action item can be dispatched independently:
-
-| Destination | Automation | Result |
+| Destination | What SyncPulse sends | What comes back |
 | --- | --- | --- |
-| Google Calendar | Create a deadline event with description, reminder, and optional attendee | A live Calendar event when OAuth is available, or a pre-filled Calendar link |
-| Jira | Create a Task with summary, description, priority, project, and due date | A Jira issue key and link |
-| Slack | Post a formatted notification with task, owner, deadline, priority, and category | A team update in the configured channel |
-| Email | Send an assignment message to the task owner | A direct notification with task details and source context |
-| Email All | Broadcast meeting minutes to selected recipients | A reviewable meeting summary and task breakdown |
+| Google Calendar | Deadline, description, reminder, and optional attendee | Event link and sync timestamp |
+| Jira | Task summary, context, priority, project, and due date | Issue key and issue link |
+| Slack | Task, owner, deadline, priority, and category | Channel and sync timestamp |
+| Email | Assignment message with task details and source context | Recipient and sent timestamp |
+| Email All | Reviewed summary and task breakdown for recipients | Broadcast status |
 
-Every action records its sync state, destination details, and timestamp so the reviewer can see what has already been sent.
-
-### 5. Bulk follow-up automation
-
-Use **Sync All** when a meeting produces several follow-ups. SyncPulse processes unsynced action items for Google Calendar and Jira, while individual Slack and email controls remain available when a notification needs more judgment.
-
-### 6. Searchable meeting archive
-
-Save reviewed meetings to Supabase and return to them later. The history view supports:
-
-- Keyword search across titles, summaries, original transcripts, decisions, owners, and action items.
-- Category filtering.
-- Quick preview of meeting outcomes.
-- Loading a saved meeting back into the reviewer.
-- Deleting an archived meeting.
-- Markdown export of meeting minutes.
+Every action item keeps its destination state, returned link or identifier, and sync timestamp. Reviewers can see what is pending and what has already moved downstream.
 
 ## How to automate a recurring workflow
 
@@ -122,25 +126,25 @@ The diagram below is intentionally split into readable stages. In GitHub, use th
 
 ```mermaid
 flowchart LR
-    A[Meeting transcript\nZoom / Meet / Teams / text] --> B[SyncPulse intake\nPaste / upload / sample]
+   A[Meeting transcript<br/>Zoom / Meet / Teams / text] --> B[SyncPulse intake<br/>Paste / upload / sample]
     B --> C[Groq AI extraction]
 
     C --> D[Structured meeting result]
     D --> D1[Summary and topics]
     D --> D2[Decisions and rationale]
-    D --> D3[Action items\nowner / email / due date / priority]
+   D --> D3[Action items<br/>owner / email / due date / priority]
 
     D1 --> E[Human review dashboard]
     D2 --> E
     D3 --> E
 
     E --> F{Choose an action}
-    F --> G[Google Calendar\ndeadline + reminders]
-    F --> H[Jira\nTask + priority + due date]
-    F --> I[Slack\nteam notification]
-    F --> J[Email\nowner assignment]
-    F --> K[Email All\nmeeting broadcast]
-    F --> L[Sync All\nCalendar + Jira batch]
+   F --> G[Google Calendar<br/>deadline + reminders]
+   F --> H[Jira<br/>Task + priority + due date]
+   F --> I[Slack<br/>team notification]
+   F --> J[Email<br/>owner assignment]
+   F --> K[Email All<br/>meeting broadcast]
+   F --> L[Sync All<br/>Calendar + Jira batch]
 
     G --> M[Sync status and links]
     H --> M
@@ -150,7 +154,7 @@ flowchart LR
     L --> M
 
     E --> N[Save to Supabase]
-    N --> O[Searchable history\npreview / reload / export Markdown]
+   N --> O[Searchable history<br/>preview / reload / export Markdown]
 ```
 
 ### The same workflow in plain text
